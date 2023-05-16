@@ -74,11 +74,10 @@ export const Faq = () => {
                             </svg>
                             <span class="relative">The</span>
                         </span>{' '}
-                        quick, brown fox jumps over a lazy dog
+                        This is headline again added
                     </h2>
                     <p class="text-base text-gray-700 md:text-lg ">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium doloremque rem aperiam, eaque ipsa quae.
+                        This is new text just added
                     </p>
                 </div>
                 <div class="space-y-4">
