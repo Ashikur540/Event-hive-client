@@ -11,8 +11,8 @@ export const Navbar = () => {
         { url: '/contact', name: 'Contact' },
     ]
     return (
-        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-            <div className="relative flex items-center justify-between">
+        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 bg-white-toned dark:bg-gradient-to-r from-[#0C030A] via-slate-950 to-[#2E0B28]">
+            < div className="relative flex items-center justify-between" >
                 <a
                     href="/"
                     aria-label="Company"
@@ -34,7 +34,7 @@ export const Navbar = () => {
                         <rect x="14" y="1" width="7" height="6" />
                         <rect x="14" y="11" width="7" height="12" />
                     </svg>
-                    <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+                    <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 dark:text-white-toned uppercase">
                         Company
                     </span>
                 </a>
@@ -46,7 +46,7 @@ export const Navbar = () => {
                                     to={link.url}
                                     aria-label={link.name}
                                     title={link.name}
-                                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                    className="font-medium tracking-wide text-gray-700 dark:text-snow-white-toned transition-colors duration-200 hover:text-indigo-700 "
                                 >
                                     {link.name}
                                 </Link>
@@ -160,7 +160,7 @@ export const Navbar = () => {
                         </div>
                     )}
                 </div>
-            </div>
-        </div>
+            </ div>
+        </div >
     );
 };

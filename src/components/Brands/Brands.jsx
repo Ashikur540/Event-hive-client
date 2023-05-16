@@ -36,7 +36,7 @@ export const Brands = () => {
                         >
                             <img
                                 src={img.src}
-                                className="contrast-0 transition group-hover:contrast-100 w-full"
+                                className="contrast-0 transition group-hover:contrast-100 w-full dark:hover:contrast-200"
 
                                 alt={img.name}
                             />

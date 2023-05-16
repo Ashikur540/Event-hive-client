@@ -4,13 +4,14 @@ const Banner = () => {
     return (
         <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 md:py-16">
             <div className="p-1 flex flex-col sm:flex-col md:flex-row gap-8 justify-between items-center">
-                <h1 className="text-4xl  lg:text-6xl tracking-normal md:leading-[1.4em] lg:leading-[1.2em] capitalize">
+                <h1 className="text-4xl  lg:text-6xl tracking-normal md:leading-[1.4em] lg:leading-[1.2em] capitalize dark:text-snow-white">
                     Your <span className='gradient-text'>One-Stop-Shop</span> for Memorable Events.
 
                 </h1>
                 <div className="">
-                    <p className="text-base mb-4 font-inter text-dark-toned">
-                        <i className='font-medium block text-lg'> " Find Everything You Need Here "</i>
+                    <i className='font-medium block text-lg text-black dark:text-snow-white'> " Find Everything You Need Here "</i>
+                    <p className="text-base mb-4 font-inter text-dark-toned dark:text-snow-white-toned">
+
                         we aims to simplify the entire event planning process for customers and event planners by providing a platform that helps them with everything they need for an event, including event space or venue catering, event dress decoration, and budget planning.
                     </p>
 

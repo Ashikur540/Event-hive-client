@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <section className="py-10 bg-white sm:py-16 lg:py-24">
+        <section className="py-10  sm:py-16 lg:py-24">
             <div className="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
                 <div className="grid items-center md:grid-cols-2 gap-y-10 md:gap-x-20">
                     <div className="pr-12 sm:pr-0 ">
@@ -14,18 +14,19 @@ const About = () => {
                     </div>
 
                     <div>
-                        <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Grow business with us.</h2>
-                        <p className="mt-4 text-base leading-relaxed text-dark-toned font-inter">We are not only solution providers but also proving opportunities to other to do business with us.Basically they will be our solution source like venue 💒, dressing costume 💍, food service 🍽 etc.</p>
+                        <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl dark:text-snow-white">Grow business with us.</h2>
+                        <p className="mt-4 text-base leading-relaxed text-dark-toned dark:text-snow-white-toned font-inter ">We are not only solution providers but also proving opportunities to other to do business with us.Basically they will be our solution source like venue 💒, dressing costume 💍, food service 🍽 etc.</p>
 
 
 
                         <div className="grid gap-10 row-gap-8 lg:grid-cols-3 py-10">
                             <div>
                                 <div className="flex">
-                                    <h6 className="mr-2 text-4xl font-bold md:text-5xl text-deep-purple-accent-400">
+                                    <h6 className="mr-2 text-4xl font-bold md:text-5xl text-slate-800
+                                    dark:text-snow-white">
                                         20+
                                     </h6>
-                                    <div className="flex items-center justify-center rounded-full bg-teal-accent-400 w-7 h-7">
+                                    <div className="flex items-center justify-center rounded-full bg-teal-400 w-7 h-7 ">
                                         <svg
                                             className="text-blue-900 w-7 h-7"
                                             stroke="currentColor"
@@ -41,7 +42,7 @@ const About = () => {
                                         </svg>
                                     </div>
                                 </div>
-                                <p className="mb-2 font-bold md:text-lg">Successfull Events</p>
+                                <p className="mb-2 font-bold md:text-lg text-dark-toned dark:text-snow-white-toned">Successfull Events</p>
 
                             </div>
                         </div>

@@ -21,14 +21,13 @@ module.exports = {
       },
       colors: {
         'white': '#ffffff',
-        'dark': '#3B4949',
         'dark-toned': '#5a5858',
-        'primary': '#5B9982',
         'red': '#DB2F06',
         'red-toned': '#FAE8E4',
-        'snow-white': '#rgb(241,246,247)',
+        'snow-white': 'rgb(241,246,247)',
+        'snow-white-toned': '#f2f2f2',
         'gray': '#8B928F',
-        'gray-border': '#F2F2F2',
+        'white-toned': '#fffff5',
 
 
       }
