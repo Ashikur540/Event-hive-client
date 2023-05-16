@@ -4,10 +4,10 @@ const FeaturedServices = () => {
     return (
         <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24 text-center">
             <div className="py-20 px-8 max-w-screen-md mx-auto">
-                <h1 className="text-4xl  text-center font-medium mb-6">
+                <h1 className="text-4xl  text-center font-medium mb-6 dark:text-snow-white">
                     Streamline Your Event Planning with Our Comprehensive Services
                 </h1>
-                <p className="text-base font-inter">
+                <p className="text-base font-inter dark:text-snow-white-toned">
                     From Venues to Vendors: Get Everything You Need for Your Next Event Here
                 </p>
             </div>

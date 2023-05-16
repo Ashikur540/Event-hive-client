@@ -4,10 +4,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@400;500&display=swap");
 
-.btn-primary {
-  @apply bg-gradient-to-tr from-teal-100 via-cyan-300 to-blue-200 hover:bg-cyan-200 flex items-center  font-medium tracking-wide text-white capitalize transition-colors duration-300  py-4 px-10 text-center  hover:bg-opacity-90 lg:px-8 xl:px-10;
-}
-
 body {
   margin: 0;
   font-family: "Playfair Display", serif;
@@ -33,17 +29,22 @@ code {
   }
 } */
 
-.gradient-text {
-  @apply font-medium bg-clip-text text-transparent bg-gradient-to-tr from-teal-500 via-cyan-300 to-slate-500;
-}
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-tr from-cyan-300  to-indigo-400 flex items-center  font-medium tracking-wide text-white capitalize transition-all duration-300  py-4 px-10 text-center   lg:px-8 xl:px-10 hover:bg-gradient-to-tr hover:from-cyan-300 hover:to-teal-200 hover:shadow-md rounded-md;
+  }
+  .gradient-text {
+    @apply font-medium bg-clip-text text-transparent bg-gradient-to-tr from-teal-500 via-cyan-300 to-slate-500;
+  }
 
-.slick-slide > div {
-  margin: 0 0.8rem;
-}
-.slick-dots {
-  visibility: hidden;
-}
+  .slick-slide > div {
+    margin: 0 0.8rem;
+  }
+  .slick-dots {
+    visibility: hidden;
+  }
 
-.pic:hover .slick-dots {
-  visibility: visible;
+  .pic:hover .slick-dots {
+    visibility: visible;
+  }
 }
