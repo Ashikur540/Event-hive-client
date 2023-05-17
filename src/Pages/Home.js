@@ -12,7 +12,7 @@ import Testimonials from '../components/Testimonials/Testimonials'
 
 export const Home = () => {
     return (
-        <div className="min-h-screen max-w-screen-2xl mx-auto bg-white-toned dark:bg-gradient-to-r from-[#0C030A] via-slate-950 to-[#2E0B28]">
+        <div className="min-h-screen max-w-screen-2xl mx-auto transition-colors duration-[2000ms] ease-in-out">
             <Banner />
             <Brands />
             <About />
