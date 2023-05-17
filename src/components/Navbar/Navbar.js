@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import DayNightToggle from 'react-day-and-night-toggle';
 import { Link } from "react-router-dom";
-
+import { themeContext } from "../../Contexts/ThemeProvider";
 export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { setTheme, dark, setDark, isDark, toggleTheme } = useContext(themeContext);
     const allLinks = [
         { url: '/', name: 'Home' },
         { url: '/about', name: 'About' },
@@ -11,7 +13,7 @@ export const Navbar = () => {
         { url: '/contact', name: 'Contact' },
     ]
     return (
-        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 bg-white-toned dark:bg-gradient-to-r from-[#0C030A] via-slate-950 to-[#2E0B28]">
+        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
             < div className="relative flex items-center justify-between" >
                 <a
                     href="/"
@@ -56,6 +58,15 @@ export const Navbar = () => {
 
                 </ul>
                 <ul className="flex items-center hidden space-x-8 lg:flex">
+                    <li>
+                        <DayNightToggle
+                            onChange={() => toggleTheme()}
+                            checked={isDark}
+                            size={20}
+                            shadows={true}
+
+                        />
+                    </li>
                     <li >
                         <a
                             href="/"

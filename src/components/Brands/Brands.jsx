@@ -32,7 +32,7 @@ export const Brands = () => {
                 <Slider {...settings}>
                     {
                         imgs.map((img, i) => <div key={i}
-                            className="max-w-[150px] group rounded-xl   dark:border-gray-600 bg-white bg-opacity-5 py-2 px-4 hover:bg-opacity-10"
+                            className="max-w-[150px] group rounded-xl hover:border  hover:dark:border-slate-600 bg-white bg-opacity-5 py-2 px-4 hover:bg-opacity-10"
                         >
                             <img
                                 src={img.src}

@@ -9,6 +9,17 @@ body {
   font-family: "Playfair Display", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: all 1.3s ease-in-out;
+}
+
+.dark {
+  /* background: linear-gradient(to right, #0c030a, #2e0b28); */
+  background: #2e0b28;
+  transition: all 1.3s ease-in-out;
+}
+.light {
+  background-color: rgb(241, 246, 247);
+  transition: all 1.3s ease-in-out;
 }
 
 code {
