@@ -56,7 +56,7 @@ const Testimonials = () => {
                                             4
                                         </path>
                                     </svg>
-                                    <p className="px-6 py-2 text-2xl font-semibold text-center sm:font-bold sm:text-3xl md:text-4xl lg:max-w-2xl xl:max-w-4xl dark:text-snow-white ">" {review?.['review text']} "</p>
+                                    <p className="px-6 py-2 text-2xl font-semibold text-center sm:font-bold sm:text-2xl md:text-3xl lg:max-w-2xl xl:max-w-4xl dark:text-snow-white ">" {review?.['review text']} "</p>
                                     <div className="flex justify-center space-x-3">
                                         <img src={"https://source.unsplash.com/80x80/?portrait?1"} alt="" className="w-20 h-20 bg-center bg-cover rounded-md dark:bg-gray-500 dark:bg-gray-700" />
                                         <div>

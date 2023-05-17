@@ -40,19 +40,19 @@ export const Pricing = () => {
                     accusantium doloremque rem aperiam, eaque ipsa quae.
                 </p>
             </div>
-            <div className="grid max-w-md gap-10 row-gap-5 sm:row-gap-10 lg:max-w-screen-md lg:grid-cols-2 sm:mx-auto">
-                <div className="flex flex-col justify-between p-5 bg-white border rounded shadow-sm">
+            <div className="grid max-w-md gap-10 row-gap-5 sm:row-gap-10 lg:max-w-screen-md lg:grid-cols-2 sm:mx-auto ">
+                <div className="flex flex-col justify-between p-5 bg-white border rounded shadow-sm  dark:bg-opacity-10">
                     <div className="mb-6">
                         <div className="flex items-center justify-between pb-6 mb-6 border-b">
                             <div>
-                                <p className="text-sm font-bold tracking-wider uppercase">
+                                <p className="text-sm font-bold tracking-wider uppercase dark:text-snow-white-toned">
                                     Personal use
                                 </p>
-                                <p className="text-5xl font-extrabold">Free</p>
+                                <p className="text-5xl font-extrabold dark:text-snow-white">Free</p>
                             </div>
                             <div className="flex items-center justify-center w-24 h-24 rounded-full bg-blue-gray-50">
                                 <svg
-                                    className="w-10 h-10 text-gray-600"
+                                    className="w-10 h-10 text-gray-600 dark:text-snow-white"
                                     viewBox="0 0 24 24"
                                     strokeLinecap="round"
                                     strokeLidth="2"
@@ -71,9 +71,9 @@ export const Pricing = () => {
                             </div>
                         </div>
                         <div>
-                            <p className="mb-2 font-bold tracking-wide">Features</p>
-                            <ul className="space-y-2">
-                                <li className="flex items-center">
+                            <p className="mb-2 font-bold tracking-wide dark:text-snow-white">Features</p>
+                            <ul className="space-y-2 text-slate-800 dark:text-snow-white">
+                                <li className="flex items-center ">
                                     <div className="mr-2">
                                         <svg
                                             className="w-4 h-4 text-deep-purple-accent-400"
@@ -181,7 +181,7 @@ export const Pricing = () => {
                         >
                             Start for free
                         </a>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-gray-600  dark:text-snow-white">
                             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                             accusantium
                         </p>
