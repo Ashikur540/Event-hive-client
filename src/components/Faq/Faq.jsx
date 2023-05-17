@@ -49,7 +49,7 @@ export const Faq = () => {
                             <svg
                                 viewBox="0 0 52 24"
                                 fill="currentColor"
-                                className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+                                className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-slate-800 dark:text-snow-white lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
                             >
                                 <defs>
                                     <pattern
@@ -68,11 +68,11 @@ export const Faq = () => {
                                     height="24"
                                 />
                             </svg>
-                            <span className="relative">The</span>
+                            <span className="relative">Some</span>
                         </span>{' '}
-                        This is headline again
+                        frequently asked questions
                     </h2>
-                    <p className="text-base text-gray-700 md:text-lg ">
+                    <p className="text-base text-gray-700 md:text-lg dark:text-snow-white-toned">
                         This is new text just added
                     </p>
                 </div>
