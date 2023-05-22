@@ -35,7 +35,7 @@ const MakeupService = () => {
                     makeupArtists?.map(makeupArtist => (
                         // cards
                         <Link to={`/makeup/${makeupArtist?._id}`}>
-                            <div className="overflow-hidden rounded bg-white dark:bg-opacity-10 dark:shadow-none text-slate-500 shadow-md shadow-slate-200">
+                            <div className="service-card">
                                 {/*  <!--  Image --> */}
                                 <figure className='overflow-hidden'>
                                     <img

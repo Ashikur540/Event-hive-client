@@ -17,29 +17,29 @@ const PhotographerDetails = () => {
     return (
         <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 md:py-16 ">
             <section>
-                <div class="relative mx-auto max-w-screen-xl px-4 py-8">
+                <div className="relative mx-auto max-w-screen-xl px-4 py-8">
                     <div>
-                        <h1 class="text-2xl font-bold lg:text-3xl dark:text-snow-white">{clothName}</h1>
+                        <h1 className="text-2xl font-bold lg:text-3xl dark:text-snow-white">{clothName}</h1>
 
-                        <p class="mt-1 text-sm text-gray-500 font-inter dark:text-snow-white-toned">Category: {category}</p>
+                        <p className="mt-1 text-sm text-gray-500 font-inter dark:text-snow-white-toned">Category: {category}</p>
                     </div>
 
-                    <div class="grid gap-8 lg:grid-cols-4 lg:items-start">
-                        <div class="lg:col-span-3">
-                            <div class="relative mt-4">
+                    <div className="grid gap-8 lg:grid-cols-4 lg:items-start">
+                        <div className="lg:col-span-3">
+                            <div className="relative mt-4">
                                 <figure className='overflow-hidden'>
                                     <img
                                         alt={clothName}
                                         src={picture}
-                                        class="h-72 w-full rounded-xl object-cover lg:h-[540px] hover:scale-110 duration-300 cursor-pointer"
+                                        className="h-72 w-full rounded-xl object-cover lg:h-[540px] hover:scale-110 duration-300 cursor-pointer"
                                     />
                                 </figure>
 
                                 <div
-                                    class="absolute bottom-4 left-1/2 inline-flex -translate-x-1/2 items-center rounded-full bg-black/75 px-3 py-1.5 text-white"
+                                    className="absolute bottom-4 left-1/2 inline-flex -translate-x-1/2 items-center rounded-full bg-black/75 px-3 py-1.5 text-white"
                                 >
                                     <svg
-                                        class="h-4 w-4"
+                                        className="h-4 w-4"
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         viewBox="0 0 24 24"
@@ -53,16 +53,16 @@ const PhotographerDetails = () => {
                                         />
                                     </svg>
 
-                                    <span class="ms-1.5 text-xs"> Hover to zoom </span>
+                                    <span className="ms-1.5 text-xs"> Hover to zoom </span>
                                 </div>
                             </div>
 
-                            <ul class="mt-1 flex gap-1">
+                            <ul className="mt-1 flex gap-1">
                                 <li>
                                     <img
                                         alt="Tee"
                                         src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                        class="h-16 w-16 rounded-md object-cover"
+                                        className="h-16 w-16 rounded-md object-cover"
                                     />
                                 </li>
 
@@ -70,7 +70,7 @@ const PhotographerDetails = () => {
                                     <img
                                         alt="Tee"
                                         src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                        class="h-16 w-16 rounded-md object-cover"
+                                        className="h-16 w-16 rounded-md object-cover"
                                     />
                                 </li>
 
@@ -78,7 +78,7 @@ const PhotographerDetails = () => {
                                     <img
                                         alt="Tee"
                                         src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                                        class="h-16 w-16 rounded-md object-cover"
+                                        className="h-16 w-16 rounded-md object-cover"
                                     />
                                 </li>
 
@@ -86,31 +86,31 @@ const PhotographerDetails = () => {
                                     <img
                                         alt={clothName}
                                         src={picture}
-                                        class="h-16 w-16 rounded-md object-cover"
+                                        className="h-16 w-16 rounded-md object-cover"
                                     />
                                 </li>
                             </ul>
                         </div>
 
-                        <div class="lg:sticky lg:top-0">
-                            <form class="space-y-4 lg:pt-8">
+                        <div className="lg:sticky lg:top-0">
+                            <form className="space-y-4 lg:pt-8">
 
                                 <fieldset>
-                                    <legend class="text-lg font-bold dark:text-snow-white">Brand</legend>
+                                    <legend className="text-lg font-bold dark:text-snow-white">Brand</legend>
 
-                                    <div class="mt-2 flex flex-wrap gap-1 flex items-center gap-4">
-                                        <p class="cursor-pointer ">
+                                    <div className="mt-2 flex flex-wrap gap-1 flex items-center gap-4">
+                                        <p className="cursor-pointer ">
 
                                             <span
-                                                class="font-medium tracking-wide bg-amber-400 block rounded-full   px-3 py-1 text-xs peer-checked:bg-gray-100"
+                                                className="font-medium tracking-wide bg-amber-400 block rounded-full   px-3 py-1 text-xs peer-checked:bg-gray-100"
                                             >
                                                 {brandName}
                                             </span>
                                         </p>
-                                        <p class="">
+                                        <p className="">
 
                                             <span
-                                                class=" border border-cyan-300 block rounded-full   px-3 py-1 text-xs dark:text-snow-white-toned"
+                                                className=" border border-cyan-300 block rounded-full   px-3 py-1 text-xs dark:text-snow-white-toned"
                                             >
                                                 ❤ {rating}
                                             </span>
@@ -118,22 +118,22 @@ const PhotographerDetails = () => {
                                     </div>
                                 </fieldset>
 
-                                <div class="rounded border bg-gray-100 p-4">
-                                    <p class="text-sm ">
-                                        <span class="block dark:text-snow-white-toned"> Size-{size}</span>
-                                        <span class="block dark:text-snow-white-toned"> Delivery charge 200 BDT. </span>
+                                <div className="rounded border bg-gray-100 p-4">
+                                    <p className="text-sm ">
+                                        <span className="block dark:text-snow-white-toned"> Size-{size}</span>
+                                        <span className="block dark:text-snow-white-toned"> Delivery charge 200 BDT. </span>
 
-                                        {/* <a href="" class="mt-1 inline-block underline"> Find out more </a> */}
+                                        {/* <a href="" className="mt-1 inline-block underline"> Find out more </a> */}
                                     </p>
                                 </div>
 
                                 <div>
-                                    <p class="text-xl font-bold font-inter dark:text-snow-white">{price} BDT</p>
+                                    <p className="text-xl font-bold font-inter dark:text-snow-white">{price} BDT</p>
                                 </div>
 
                                 <button
                                     type="submit"
-                                    class="btn-primary"
+                                    className="btn-primary"
                                 >
                                     Buy now
                                 </button>
@@ -142,8 +142,8 @@ const PhotographerDetails = () => {
                             </form>
                         </div>
 
-                        <div class="lg:col-span-3">
-                            <div class="prose max-w-none dark:text-snow-white-toned">
+                        <div className="lg:col-span-3">
+                            <div className="prose max-w-none dark:text-snow-white-toned">
                                 <p>
                                     built with best quality materials
                                 </p>

@@ -30,6 +30,8 @@ module.exports = {
         'white-toned': '#fffff5',
 
 
+
+
       }
     },
   },

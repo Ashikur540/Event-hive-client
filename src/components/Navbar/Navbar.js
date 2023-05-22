@@ -1,10 +1,13 @@
 import { useContext, useState } from "react";
 import DayNightToggle from 'react-day-and-night-toggle';
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../Contexts/AuthProvider";
 import { themeContext } from "../../Contexts/ThemeProvider";
 export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { isDark, toggleTheme } = useContext(themeContext);
+    const { user, logout } = useContext(AuthContext);
     const [isScrolled, setIsScrolled] = useState(false);
     const allLinks = [
         { url: '/', name: 'Home' },
@@ -27,8 +30,17 @@ export const Navbar = () => {
         return () => window.onscroll = null;
 
     }
+
+    const logoutUser = () => {
+        logout()
+            .then(() => {
+                toast.success("successfully logged out")
+            })
+            .catch(err => console.log(err.message))
+    }
+
     return (
-        <div className={`px-4 py-5 mx-auto sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 sticky top-0 left-0 right-0  ${isScrolled && 'dark:bg-black bg-white/80  bg-blur-xl'} transition duration-300 ease-linear  bg-gradient-to-t from-transparent to-gray-400`}>
+        <div className={`px-4 py-5 mx-auto sm:max-w-xl md:max-w-full z-[999]  md:px-24 lg:px-8 sticky top-0 left-0 right-0  ${isScrolled && 'dark:bg-black bg-white/80  bg-blur-xl'} transition duration-300 ease-linear  bg-gradient-to-t from-transparent to-gray-400`}>
             <div className="relative flex items-center justify-between" >
                 <a
                     href="/"
@@ -82,16 +94,25 @@ export const Navbar = () => {
 
                         />
                     </li>
-                    <li >
-                        <a
-                            href="/"
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                            aria-label="Sign up"
-                            title="Sign up"
-                        >
-                            Sign up
-                        </a>
-                    </li>
+
+                    {
+                        user && user?.email ? <>
+                            <button onClick={logoutUser}><img src="https://cdn-icons-png.flaticon.com/512/8602/8602349.png" alt="" className="w-12" title="logout" /></button>
+                            <img className="inline-block h-[2.875rem] w-[2.875rem] rounded-full ring-2 ring-white dark:ring-gray-800" src={user?.photoURL} alt={user?.displayName}></img>
+                        </>
+                            :
+                            <li >
+                                <Link
+                                    to="/signup"
+                                    className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
+                                    aria-label="Sign up"
+                                    title="Sign up"
+                                >
+                                    Sign up
+                                </Link>
+                            </li>
+                    }
+
                 </ul>
                 <div className="lg:hidden">
                     <button
