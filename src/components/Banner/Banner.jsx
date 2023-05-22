@@ -29,6 +29,7 @@ const Banner = () => {
             <div className="max-w-full mx-auto my-12 lg:my-16  shadow-lg ">
                 <video src={bannerVdo} autoPlay className='w-full' loop></video>
             </div>
+
         </div>
     );
 };

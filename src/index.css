@@ -41,9 +41,14 @@ code {
 } */
 
 @layer components {
+  .primary-gradient {
+    @apply bg-gradient-to-tr from-cyan-300  to-indigo-400 hover:from-cyan-300 hover:to-teal-200 hover:shadow-md;
+  }
+
   .btn-primary {
     @apply bg-gradient-to-tr from-cyan-300  to-indigo-400 flex items-center  font-medium tracking-wide text-white capitalize transition-all duration-300  py-4 px-10 text-center   lg:px-8 xl:px-10 hover:bg-gradient-to-tr hover:from-cyan-300 hover:to-teal-200 hover:shadow-md rounded-md;
   }
+
   .gradient-text {
     @apply font-medium bg-clip-text text-transparent bg-gradient-to-tr from-teal-500 via-cyan-300 to-slate-500;
   }
@@ -58,4 +63,25 @@ code {
   .pic:hover .slick-dots {
     visibility: visible;
   }
+
+  .service-card {
+    @apply overflow-hidden rounded bg-white dark:bg-gradient-to-b dark:from-[rgba(139,146,204,0.12)] dark:via-[#2e0b28] to-[rgba(98,113,250,0.21)]  dark:bg-opacity-10  dark:shadow-none text-slate-500 shadow-md shadow-slate-200;
+  }
+  .gradient-bg {
+    @apply bg-white dark:from-[rgba(139,146,204,0.12)] dark:via-[#2e0b28] to-[rgba(98,113,250,0.21)]  dark:bg-opacity-10;
+  }
+
+  .error-message {
+    @apply text-red font-medium p-2 font-inter text-sm;
+  }
 }
+.contact-form-spec {
+  @apply px-4 py-4;
+}
+.authentication-form-spec {
+  @apply py-4 pl-10 pr-4;
+}
+.form-input {
+  @apply block w-full  text-black transition-all duration-200 bg-snow-white dark:bg-opacity-25 dark:text-snow-white-toned rounded-md focus:outline-none;
+}
+/* placeholder:text-gray-500 dark:placeholder:text-slate-200  */
