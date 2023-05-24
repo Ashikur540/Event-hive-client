@@ -74,6 +74,10 @@ code {
   .error-message {
     @apply text-red font-medium p-2 font-inter text-sm;
   }
+
+  .form-input-dashboard {
+    @apply w-full px-4 py-3 text-slate-800 focus:outline-cyan-400 rounded-md bg-white dark:bg-opacity-20 dark:text-snow-white-toned;
+  }
 }
 .contact-form-spec {
   @apply px-4 py-4;

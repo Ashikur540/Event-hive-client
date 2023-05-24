@@ -6,9 +6,10 @@ import { toast } from 'react-toastify';
 import * as yup from "yup";
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { setAuthToken } from '../../Service Operations/Auth';
+import { saveUser } from '../../Service Operations/manageusers';
 import SmallSpinner from '../../components/Spinners/SmallSpinner';
 const Signup = () => {
-    const { createUser, updateUserProfile, loading, setLoading, verifyEmail } = useContext(AuthContext)
+    const { createUser, updateUserProfile, loading, setLoading, verifyEmail, signInWithGoogle } = useContext(AuthContext)
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Signup = () => {
 
     // form validation
     const schema = yup.object({
-        fullname: yup.string().required(),
+        fullName: yup.string().required(),
         email: yup.string().required(" You have to provide email for sure!").matches(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "❌ Provided email is not valid!"),
         password: yup.string().min(6, "Password must be at least 6 characters ❌").max(18, "Password must be at most 18 characters ❌").matches(/^(?=.*[A-Z])/, "Password should have at least one uppercase letter")
             .matches(/^(?=.*[!@#$%^&*])/, "Password must include at least one special character")
@@ -33,7 +34,7 @@ const Signup = () => {
 
 
     const handleSignup = (data) => {
-        console.log(data);
+        // console.log(data);
         const { email, password, fullName, } = data;
         const image = data.image[0];
         const formData = new FormData();
@@ -41,7 +42,7 @@ const Signup = () => {
         // console.log(image);
 
         // const url = `https://api.imgbb.com/1/upload?&key=${process.env.REACT_APP_imgbb_key}`;
-        const url = `https://api.imgbb.com/1/upload?&key=f6ec95ac78289050538f36e8d4470189`;
+        const url = `https://api.imgbb.com/1/upload?&key=${process.env.REACT_APP_imgbb_key}`;
         fetch(url, {
             method: "POST",
             body: formData,
@@ -58,13 +59,18 @@ const Signup = () => {
                     reset();
 
                     setAuthToken(user);
+                    saveUser({
+                        email: user.email,
+                        name: fullName,
+                        image: data.data?.display_url,
+
+                    })
                     // update profile
-                    updateUserProfile(fullName, data.data.display_url)
+                    updateUserProfile(fullName, data.data?.display_url)
                         .then(() => {
                             verifyEmail().then(() => {
                                 toast.success("Please check email for verification link");
                                 setLoading(false);
-                                console.log('load:', loading)
                                 navigate(from, { replace: true })
                             })
 
@@ -88,7 +94,21 @@ const Signup = () => {
 
     }
 
+    const handleGoogleSignin = () => {
+        signInWithGoogle().then(result => {
+            const user = result.user;
+            console.log(result.user)
+            setAuthToken(result.user)
+            saveUser({
+                email: user.email,
+                name: user.displayName,
+                image: user.photoURL,
 
+            })
+            setLoading(false)
+            navigate(from, { replace: true })
+        })
+    }
 
     return (
         <section className="bg-white">
@@ -162,7 +182,7 @@ const Signup = () => {
                                             id=""
                                             placeholder="Enter your full name"
                                             className="authentication-form-spec form-input"
-                                            {...register("fullname")}
+                                            {...register("fullName")}
                                         />
                                     </div>
                                     {errors.fullname && <p className='error-message'>{errors.fullname?.message}</p>}
@@ -194,7 +214,7 @@ const Signup = () => {
 
                                     <label for="" className="text-base font-medium text-gray-900 dark:text-snow-white-toned"> Choose profile photo</label>
                                     <div className="mt-2.5 relative text-gray-400 focus-within:text-gray-600">
-                                        <span class="sr-only">Choose profile photo</span>
+                                        <span className="sr-only">Choose profile photo</span>
                                         <input type="file" className="block w-full text-sm text-gray-500 dark:text-snow-white-toned file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-500 file:text-white dark:file:text-white hover:file:bg-blue-600"   {...register("image")} />
                                     </div>
                                 </div>
@@ -240,7 +260,7 @@ const Signup = () => {
                             <button
                                 type="button"
                                 className="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-200 rounded-md hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none"
-                            >
+                                onClick={handleGoogleSignin}>
                                 <div className="absolute inset-y-0 left-0 p-4">
                                     <svg className="w-6 h-6 text-rose-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                         <path

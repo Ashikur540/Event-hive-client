@@ -1,22 +1,19 @@
 
 // dealing with tokens in client side
 
-export const setAuthToken = user => {
+
+export const setAuthToken = (user) => {
+
+    // console.log(user)
     const currentUser = {
-        email: user.email,
+        email: user?.email
 
     }
-
-    fetch(`http://localhost:5000/user/${user?.email}`, {
-        method: "PUT",
-        headers: {
-            "content-type": "application/json"
-        },
-        body: JSON.stringify(currentUser)
-    })
+    console.log(currentUser)
+    fetch(`${process.env.REACT_APP_API_URL}/jwt?email=${user?.email}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            console.log("token", data);
             // save to LS
             localStorage.setItem('Eventhive-token', data.token)
         })
