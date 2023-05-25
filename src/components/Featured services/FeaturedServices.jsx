@@ -8,7 +8,7 @@ const FeaturedServices = () => {
     const Featuredservices = [
         {
             slug: "costume",
-            name: "Ceemony Costume",
+            name: "Ceremony Costume",
             desc: "We offer a range of clothing options for various events. You can conveniently purchase suits, Panjabi attire, bridal sarees, and other essentials from us based on your event preferences, especially for weddings and similar occasions.",
             img: "https://cdn.pixabay.com/photo/2017/08/06/20/11/wedding-2595862_960_720.jpg"
         },

@@ -20,6 +20,7 @@ export const Navbar = () => {
         },
         { url: '/blogs', name: 'Blogs' },
         { url: '/contact', name: 'Contact' },
+        { url: '/dashboard', name: 'Dashboard' },
     ]
 
 
@@ -98,7 +99,7 @@ export const Navbar = () => {
                     {
                         user && user?.email ? <>
                             <button onClick={logoutUser}><img src="https://cdn-icons-png.flaticon.com/512/8602/8602349.png" alt="" className="w-12" title="logout" /></button>
-                            <img className="inline-block h-[2.875rem] w-[2.875rem] rounded-full ring-2 ring-white dark:ring-gray-800" src={user?.photoURL} alt={user?.displayName}></img>
+                            <img className="inline-block h-[2.875rem] w-[2.875rem] rounded-full ring-2 ring-white dark:ring-gray-800 object-cover" src={user?.photoURL} alt={user?.displayName}></img>
                         </>
                             :
                             <li >

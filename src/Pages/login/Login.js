@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { AuthContext } from '../../Contexts/AuthProvider'
 import { setAuthToken } from '../../Service Operations/Auth'
+import SmallSpinner from '../../components/Spinners/SmallSpinner'
 
 export const Login = () => {
     const [userEmail, setUserEmail] = useState('')
@@ -26,8 +27,8 @@ export const Login = () => {
                 setUserEmail(result.user?.email);
                 console.log(userEmail)
                 // Get Token
-                setLoading(false)
                 setAuthToken(result.user)
+                setLoading(false)
                 navigate(from, { replace: true })
             })
             .catch(err => {
@@ -50,7 +51,8 @@ export const Login = () => {
     const handleReset = () => {
         resetPassword(userEmail)
             .then(() => {
-                toast.success('Please check your email for reset link')
+                toast.success('Please check your email for reset link');
+                setLoading(false)
             })
             .catch(err => {
                 toast.error(err.message)
@@ -170,7 +172,7 @@ export const Login = () => {
                                         type="submit"
                                         className="inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-white transition-all duration-200 border border-transparent rounded-md primary-gradient"
                                     >
-                                        Log in
+                                        {loading ? <SmallSpinner /> : "Log in"}
                                     </button>
                                 </div>
                             </div>
